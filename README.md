@@ -52,7 +52,7 @@ data/
 These folder names become the labels automatically (no more 0/1/2 headaches).
 
 # How to proceed step-by-step (exact workflow)
-Step A: Collect data
+## Step A: Collect data
 source .venv/bin/activate
 python collect_imgs.py
 
@@ -73,7 +73,7 @@ vary lighting
 
 use both hands sometimes (even though we canonicalize)
 
-Step B: Create dataset
+## Step B: Create dataset
 PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python python create_dataset.py
 
 
@@ -82,13 +82,13 @@ Make sure output shows something like:
 Added per class: each should be close to your image count
 If one class has very low “Added”, it means MediaPipe isn’t detecting it well.
 
-Step C: Train model
+## Step C: Train model
 python test3.py
 
-Step D: Live test
+## Step D: Live test
 python test4.py
 
-Mini FAQ
+# Mini FAQ
 “Should I use left hand or right hand?”
 
 With the handedness mirroring in create_dataset.py + test4.py:
@@ -98,3 +98,5 @@ Still, adding both hands in dataset makes it even more robust.
 “Why mirror at all?”
 
 Because otherwise Left vs Right becomes a different pattern, and the classifier may treat them as different gestures.
+
+### Intergalactic Garage
